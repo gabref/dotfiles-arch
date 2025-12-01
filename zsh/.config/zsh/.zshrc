@@ -1,5 +1,7 @@
 # history
 HISTFILE=~/.zsh_history
+HISTSIZE=5000
+SAVEHIST=5000
 
 # configurations for zsh-vi-mode, called automagically
 function zvm_config() {
@@ -8,8 +10,10 @@ function zvm_config() {
 	ZVM_KEYTIMEOUT=0.2
 }
 
-source $ZDOTDIR/zsh_exports
+# Load env (if not already loaded via .zshenv + ZDOTDIR)
+[ -f "$ZDOTDIR/env.zsh" ] && . "$ZDOTDIR/env.zsh"
 
+# ----- oh-my-zsh theme -----
 ZSH_THEME="random"
 ZSH_THEME_RANDOM_CANDIDATES=(
   "robbyrussell"
@@ -24,7 +28,6 @@ ZSH_THEME_RANDOM_CANDIDATES=(
   "kolo"
   "norm"
 )
-
 ZSH_THEME_RANDOM_QUIET=true
 
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
@@ -48,11 +51,10 @@ plugins=(
 	colored-man-pages
 )
 
-source $ZDOTDIR/zsh_exports
-source $ZSH/oh-my-zsh.sh
+# source $ZDOTDIR/zsh_exports
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# Load oh-my-zsh
+source "$ZSH/oh-my-zsh.sh"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -71,5 +73,6 @@ else
 	echo '[from me dumbass] zoxide not found, please install it from https://github.com/ajeetdsouza/zoxide'
 fi
 
-source $ZDOTDIR/zsh_profile
-source $ZDOTDIR/zshenv
+# ----- Extra config (aliases, keybindings, etc.) -----
+[ -f "$ZDOTDIR/aliases.zsh" ] && . "$ZDOTDIR/aliases.zsh"
+
