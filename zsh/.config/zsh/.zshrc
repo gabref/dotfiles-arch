@@ -8,7 +8,7 @@ function zvm_config() {
 	ZVM_KEYTIMEOUT=0.2
 }
 
-source $ZDOTDIR/.zsh_exports
+source $ZDOTDIR/zsh_exports
 
 ZSH_THEME="random"
 ZSH_THEME_RANDOM_CANDIDATES=(
@@ -48,7 +48,7 @@ plugins=(
 	colored-man-pages
 )
 
-source $ZDOTDIR/.zsh_exports
+source $ZDOTDIR/zsh_exports
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -71,5 +71,5 @@ else
 	echo '[from me dumbass] zoxide not found, please install it from https://github.com/ajeetdsouza/zoxide'
 fi
 
-source $ZDOTDIR/.zsh_profile
-source $ZDOTDIR/.zshenv
+source $ZDOTDIR/zsh_profile
+source $ZDOTDIR/zshenv
