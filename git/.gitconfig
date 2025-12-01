@@ -1,0 +1,7 @@
+[core]
+	editor = nvim
+[user]
+	email = gabudevgen@gmail.com
+	name = gabu
+[init]
+	defaultBranch = main
