@@ -1,0 +1,5 @@
+.zcomp*
+tmux/.config/tmux/plugins
+*.log
+nvim/.config/nvim/plugin/packer_compiled.lua
+
