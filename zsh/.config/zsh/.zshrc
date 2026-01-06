@@ -75,4 +75,3 @@ fi
 
 # ----- Extra config (aliases, keybindings, etc.) -----
 [ -f "$ZDOTDIR/aliases.zsh" ] && . "$ZDOTDIR/aliases.zsh"
-
