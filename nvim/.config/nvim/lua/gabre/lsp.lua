@@ -75,6 +75,9 @@ vim.diagnostic.config({
 })
 
 -- could get inspiration from here: https://github.com/Rishabh672003/Neovim/blob/main/lua%2Frj%2Flsp.lua
+local vue_language_server_path = vim.fn.stdpath('data')
+	.. '/mason/packages/vue-language-server/node_modules/@vue/language-server'
+
 local servers = {
 	gopls = {
 		settings = {
@@ -92,17 +95,27 @@ local servers = {
 		},
 	},
 
-	ts_ls = {
+	vtsls = {
 		filetypes = {
 			"typescript",
 			"typescriptreact",
-			"typescript.tsx",
 			"javascript",
 			"javascriptreact",
-			"javascript.jsx",
+			"vue",
 		},
-		cmd = { "typescript-language-server", "--stdio" },
 		settings = {
+			vtsls = {
+				tsserver = {
+					globalPlugins = {
+						{
+							name = '@vue/typescript-plugin',
+							location = vue_language_server_path,
+							languages = { 'vue' },
+							configNamespace = 'typescript',
+						},
+					},
+				},
+			},
 			typescript = {
 				inlayHints = {
 					includeInlayParameterNameHints = "literal",
@@ -221,7 +234,7 @@ vim.lsp.enable({
 	'tailwindcss',
 	'taplo',
 	'templ',
-	'ts_ls',
+	'vtsls',
 	'vue_ls',
 	'yamlls',
 })

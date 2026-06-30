@@ -16,6 +16,7 @@ return {
 			javascriptreact = { 'prettierd', stop_after_first = true },
 			typescriptreact = { 'prettierd', stop_after_first = true },
 			markdown = { 'prettierd' },
+			vue = { 'prettierd', lsp_format = 'fallback' },
 			python = { 'isort', 'black' },
 		},
 	},

@@ -7,7 +7,7 @@ return {
 	},
 	{
 		'lewis6991/gitsigns.nvim',
-		event = 'VeryLazy',
+		event = 'BufReadPre',
 		opts = {
 			signcolumn          = true, -- Toggle with `:Gitsigns toggle_signs`
 			numhl               = false, -- Toggle with `:Gitsigns toggle_numhl`

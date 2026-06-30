@@ -2,12 +2,14 @@ local function augroup(name)
 	return vim.api.nvim_create_augroup('gabu_' .. name, { clear = true })
 end
 
--- check if we need to reload the file when it changed
-vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
+-- Reload unmodified buffers after external tools change their files.
+vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'TermClose', 'TermLeave' }, {
 	group = augroup('checktime'),
 	callback = function()
-		if vim.o.buftype ~= 'nofile' then
-			vim.cmd('checktime')
+		if vim.bo.buftype == '' then
+			vim.schedule(function()
+				vim.cmd('checktime')
+			end)
 		end
 	end,
 })

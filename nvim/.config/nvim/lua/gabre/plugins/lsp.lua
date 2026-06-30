@@ -32,7 +32,7 @@ return {
 				'tailwindcss',
 				'taplo',
 				'templ',
-				'ts_ls',
+				'vtsls',
 				'vue_ls',
 				'yamlls',
 			},

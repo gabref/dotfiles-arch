@@ -54,7 +54,9 @@ return {
 	{
 		'nvim-treesitter/nvim-treesitter',
 		lazy = false,
-		build = ':TSUpdate',
+		build = function()
+			require('nvim-treesitter').install(parsers):wait(300000)
+		end,
 		cmd = { 'TSUpdateSync', 'TSUpdate', 'TSInstall' },
 		dependencies = {
 			-- modern matchit and matchparen
@@ -81,12 +83,6 @@ return {
 					end
 				end,
 			})
-
-			if vim.fn.executable('tree-sitter') == 1 then
-				vim.schedule(function()
-					require('nvim-treesitter').install(parsers)
-				end)
-			end
 		end
 	}
 }
