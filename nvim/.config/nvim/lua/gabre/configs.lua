@@ -60,12 +60,12 @@ function M.clipboard()
 		vim.g.clipboard = {
 			name = "WslClipboard",
 			copy = {
-				["+"] = "clip.exe",
-				["*"] = "clip.exe",
+				["+"] = 'winclip',
+				["*"] = 'winclip',
 			},
 			paste = {
-				["+"] = 'powershell.exe -NoProfile -Command Get-Clipboard',
-				["*"] = 'powershell.exe -NoProfile -Command Get-Clipboard',
+				["+"] = 'winpaste',
+				["*"] = 'winpaste',
 			},
 			cache_enabled = 0,
 		}

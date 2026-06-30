@@ -18,6 +18,11 @@ alias vim="nvim"
 alias gs='git status'
 alias gl='git log --oneline --graph --decorate'
 
+alias notepad='/mnt/c/Windows/System32/notepad.exe'
+
+alias adb='/mnt/c/Users/codec/AppData/Local/Android/Sdk/platform-tools/adb.exe'
+alias winjava="'/mnt/c/Program Files/Android/Android Studio/jbr/bin/java.exe'"
+
 # eval `keychain --quiet --agents ssh --eval \
 # 	/home/gabre/.ssh/id_github_ed25519 \
 # 	/home/gabre/.ssh/id_embed_ed25519 \

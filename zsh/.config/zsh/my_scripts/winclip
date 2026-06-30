@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+/mnt/c/Windows/System32/cmd.exe /c "cd /d C:\ && clip" >/dev/null 2>&1

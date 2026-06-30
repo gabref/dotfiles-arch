@@ -31,3 +31,9 @@ export EDITOR="nvim"
 
 # Cargo environment (if present)
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+# Windows
+export PATH="$PATH:/mnt/c/Users/codec/AppData/Local/Programs/Microsoft\ VS\ Code/bin"
+
+# npm -g without sudo
+export PATH="$HOME/.npm-global/bin:$PATH"
