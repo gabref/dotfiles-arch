@@ -93,7 +93,6 @@ local servers = {
 	},
 
 	ts_ls = {
-		-- from my old config, maybe there better solution nowadays
 		filetypes = {
 			"typescript",
 			"typescriptreact",
@@ -101,16 +100,8 @@ local servers = {
 			"javascript",
 			"javascriptreact",
 			"javascript.jsx",
-			"vue",
-			"svelte",
-			-- "astro",
 		},
 		cmd = { "typescript-language-server", "--stdio" },
-		init_options = {
-			name = "@vue/typescript-plugin",
-			location = "/home/gabre/n/lib/node_modules/@vue/language-server",
-			languages = { "vue" },
-		},
 		settings = {
 			typescript = {
 				inlayHints = {
@@ -179,10 +170,10 @@ local servers = {
 	},
 
 	taplo = {
-		filetype = { "toml" },
+		filetypes = { "toml" },
 	},
 
-	pyright = {
+	pylsp = {
 		filetypes = { "python" },
 		root_markers = {
 			"*.py",
@@ -209,7 +200,28 @@ local servers = {
 	},
 }
 
-
 for server, config in pairs(servers) do
 	vim.lsp.config[server] = config
 end
+
+vim.lsp.enable({
+	'astro',
+	'bashls',
+	'clangd',
+	'cssls',
+	'docker_compose_language_service',
+	'gopls',
+	'jsonls',
+	'lua_ls',
+	'marksman',
+	'prismals',
+	'pylsp',
+	'rust_analyzer',
+	'svelte',
+	'tailwindcss',
+	'taplo',
+	'templ',
+	'ts_ls',
+	'vue_ls',
+	'yamlls',
+})

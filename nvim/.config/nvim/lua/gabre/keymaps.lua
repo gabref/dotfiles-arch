@@ -40,8 +40,8 @@ map("n", "Q", "<nop>")
 map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- quick fix list
-map("n", "[q", "<cmd>cnext<CR>zz")
-map("n", "]q", "<cmd>cprev<CR>zz")
+map("n", "[q", "<cmd>cprev<CR>zz")
+map("n", "]q", "<cmd>cnext<CR>zz")
 map("n", "<leader>k", "<cmd>lnext<CR>zz")
 map("n", "<leader>j", "<cmd>lprev<CR>zz")
 

@@ -211,8 +211,8 @@ return {
 
 		-- stylua: ignore
 		keys = {
-			{ '<leader>gb', '<cmd>BlameToggle virtual<CR>', desc = 'Git blame' },
-			{ '<leader>gB', '<cmd>BlameToggle window<CR>',  desc = 'Git blame (window)' },
+			{ '<leader>gV', '<cmd>BlameToggle virtual<CR>', desc = 'Git blame (virtual)' },
+			{ '<leader>gW', '<cmd>BlameToggle window<CR>',  desc = 'Git blame (window)' },
 		},
 
 		opts = {

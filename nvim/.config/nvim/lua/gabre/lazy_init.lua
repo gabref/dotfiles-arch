@@ -41,6 +41,7 @@ function M.lazy_setup()
 		concurrency = vim.uv.available_parallelism() * 2,
 		defaults = { lazy = true, version = false },
 		change_detection = { notify = false },
+		rocks = { enabled = false },
 		diff = { cmd = 'terminal_git' },
 		ui = {
 			size = { width = 0.8, height = 0.85 },

@@ -45,7 +45,6 @@ function M.setup()
 			end
 			M.load("keymaps")
 			M.load("terminal")
-			M.load("lsp")
 			M.clipboard()
 			if lazy_clipboard ~= nil then
 				vim.opt.clipboard = lazy_clipboard

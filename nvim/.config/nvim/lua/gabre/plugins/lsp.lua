@@ -3,7 +3,6 @@ return {
 	{
 		'folke/lazydev.nvim',
 		ft = 'lua',
-		lazy = false,
 		opts = {
 			library = {
 				-- See the configuration section for more details
@@ -18,20 +17,31 @@ return {
 		opts = {
 			ensure_installed = {
 				'astro',
-				'lua_ls',
 				'bashls',
-				'templ',
-				'gopls',
-				'prismals',
-				'rust_analyzer',
+				'clangd',
 				'cssls',
+				'docker_compose_language_service',
+				'gopls',
 				'jsonls',
-				'tailwindcss',
-				'ts_ls',
+				'lua_ls',
 				'marksman',
+				'prismals',
+				'pylsp',
+				'rust_analyzer',
+				'svelte',
+				'tailwindcss',
+				'taplo',
+				'templ',
+				'ts_ls',
+				'vue_ls',
 				'yamlls',
 			},
+			automatic_enable = false,
 		},
+		config = function(_, opts)
+			require('gabre.lsp')
+			require('mason-lspconfig').setup(opts)
+		end,
 		dependencies = {
 			{
 				'williamboman/mason.nvim',

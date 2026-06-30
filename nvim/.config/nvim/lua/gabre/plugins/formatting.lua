@@ -10,6 +10,7 @@ return {
 			-- must install npm i -D prettier-plugin-astro + prettierrc
 			astro = { 'prettierd', lsp_format = 'fallback' },
 			lua = { 'stylua' },
+			rust = { 'rustfmt', lsp_format = 'fallback' },
 			javascript = { 'prettierd', stop_after_first = true },
 			typescript = { 'prettierd', stop_after_first = true },
 			javascriptreact = { 'prettierd', stop_after_first = true },

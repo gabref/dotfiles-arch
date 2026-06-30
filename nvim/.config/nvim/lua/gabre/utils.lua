@@ -14,7 +14,7 @@ end
 -- ~  --------------------------------------------------------------------------------  ~ --
 
 ---@return boolean
-function Utils.IsBufEmpty() return vim.fn.empty(vim.fn.expand("%:t")) ~= 1 end
+function Utils.IsBufEmpty() return vim.api.nvim_buf_get_name(0) == "" end
 
 -- ~  --------------------------------------------------------------------------------  ~ --
 
