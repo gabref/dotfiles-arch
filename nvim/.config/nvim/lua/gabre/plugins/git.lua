@@ -88,7 +88,7 @@ return {
 				map('n', '<leader>hS', gs.stage_buffer, { silent = true, desc = 'Stage buffer' })
 				map('n', '<leader>hu', gs.undo_stage_hunk, { desc = 'Undo staged hunk' })
 				map('n', '<leader>hR', gs.reset_buffer, { desc = 'Reset buffer' })
-				map('n', 'gs', gs.preview_hunk, { desc = 'Preview hunk' })
+				map('n', '<leader>gp', gs.preview_hunk, { desc = 'Preview hunk' })
 				map('n', '<leader>hp', gs.preview_hunk_inline, { desc = 'Preview hunk inline' })
 				map('n', '<leader>hb', function() gs.blame_line({ full = true }) end, { desc = 'Show blame commit' })
 				map('n', '<leader>hd', gs.diffthis, { desc = 'Diff against the index' })
